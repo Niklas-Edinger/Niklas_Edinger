@@ -1,0 +1,3 @@
+- 👋 Hi, I’m @Garry-the-III
+- 👀 I’m interested in app development, data analysis and AI.
+- 🌱 I’m currently learning how to build an app with Flutter.
