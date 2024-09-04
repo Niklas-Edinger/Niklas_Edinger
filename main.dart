@@ -1,3 +1,10 @@
+class Class {
+  var myProperty = 'Hello, World!';
+  myMethod() {
+    print(this.myProperty);
+  }
+}
+
 void main() {
-  print('Hello, World!');
+  Class().myMethod();
 }
