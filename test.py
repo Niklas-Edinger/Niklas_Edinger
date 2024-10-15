@@ -118,3 +118,90 @@ def QuadGleichung():
     print(x)
 
 QuadGleichung()
+
+# 3.1 Münzwurf
+
+import random
+
+def muenzwurf():
+
+    muenze = random.randint(0, 1)
+
+    if muenze == 0:
+        print('Kopf')
+    else:
+        print('Zahl')
+
+muenzwurf()
+
+# 3.2 # Quadratische Gleichung
+
+def QuadGleichung():
+
+    float a = input('a: ')
+    float b = input('b: ')
+    float c = input('c: ')
+
+    x = (-b + (b**2 - 4*a*c)**0.5) / (2*a)
+
+    if x is tuple:
+        print(f'x hat zwei Werte: {x[0]} und {x[1]}.')
+    elif x is complex:
+        print(f'x ist eine komplexe Zahl: {x}.')
+
+    print(x)
+
+QuadGleichung()
+
+# 3.3 Klassifizierung von Schrauben
+
+def Schrauben(durchmesser, laenge):
+    if durchmesser <= 3 and laenge <= 20:
+        print('Die Schraube ist vom Typ1.')
+    elif 4 <= durchmesser <= 6 and 21 <= laenge <= 30:
+        print('Die Schraube ist vom Typ2.')
+    elif 7 <= durchmesser <= 20 and 31 <= laenge <= 50:
+        print('Die Schraube ist vom Typ3.')
+    else:
+        print('Unbekannter Schraubentyp')
+
+Schraube(input('Durchmesser in mm: '), input('Länge in mm: '),)
+
+# 3.4 Schaltjahr
+
+jahreszahl = 0
+schaltjahr = false
+
+def Kalender(int(jahreszahl)):
+
+    if jahreszahl % 4 == 0 and jahreszahl % 100 != 0 or jahreszahl % 400 == 0:
+        schaltjahr = true
+
+    if schaltjahr == true
+        print:('Februar hat 28 Tage.')
+    else:
+        print('Februar hat 29 Tage.')
+
+Kalender(input('Ganzzahlige Jahreszahl: '))
+
+# 3.5 Maschinensteuerung
+
+def Steuerung(int(alpha), x, a, b, w):
+
+    y = 0
+    anteil = 0
+
+    if alpha == 1:
+        y = w
+    elif alpha == 2:
+        if x < a:
+            anteil = x / a
+            y = w * anteil
+        else:
+            y = w
+    else:
+        print('Alpha muss den Wert 1 oder 2 haben.')
+    
+    print(y)
+
+Steuerung(input('alpha: '), input('x: '), input('a: '), input('b: '), input('w: '))
