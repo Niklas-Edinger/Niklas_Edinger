@@ -216,3 +216,136 @@ def Steuerung(int(alpha), x, a, b, w):
     print(y)
 
 Steuerung(input('alpha: '), input('x: '), input('a: '), input('b: '), input('w: '))
+
+# 4.1 Würfelspiel
+
+# (a)
+
+wurf = 0
+spieler1 = 0
+spieler2 = 0
+
+for i in range(10):
+    wurf = random.randint(1,6)
+    if i % 2 == 0:
+        spieler1 += wurf
+    else:
+        spieler2 += wurf
+
+if spieler1 > spieler2:
+    print("Spieler 1 gewinnt!")
+elif spieler2 > spieler1:
+    print("Spieler 2 gewinnt!")
+else:
+    print("Unentschieden!")
+
+# (b)
+
+wurf = 0
+i = 0
+spieler1 = 0
+spieler2 = 0
+
+while spieler1 < 100 and spieler2 < 100:
+    wurf = random.randint(1,6)
+    if i % 2 == 0:
+        spieler1 += wurf
+        i += 1
+    else:
+        spieler2 += wurf
+        i += 1
+
+if spieler1 > spieler2:
+    print("Spieler 1 gewinnt!")
+elif spieler2 > spieler1:
+    print("Spieler 2 gewinnt!")
+else:
+    print("Unentschieden!")
+
+# (c)
+
+wurf = 0
+i = 0
+streak1 = [0,1,0]
+streak2 = [0,1,0]
+
+while True:
+    wurf = random.randint(1,6)
+    if i % 2 == 0:
+        streak1.append(wurf)
+    else:
+        streak2.append(wurf)
+
+    i += 1
+
+    if streak1[-1] == streak1[-2] == streak1[-3]:
+        print("Spieler 1 gewinnt!")
+        break
+    elif streak2[-1] == streak2[-2] == streak2[-3]:
+        print("Spieler 2 gewinnt!")
+        break
+
+# (d)
+
+wurf = 0
+i = 0
+spieler1 = 0
+spieler2 = 0
+
+while wurf != 6:
+    wurf = random.randint(1,6)
+    if i % 2 == 0 and wurf == 6:
+        print("Spieler 1 gewinnt!")
+        break
+    elif i % 2 != 0 and wurf == 6:
+        print("Spieler 2 gewinnt!")
+        break
+    else:
+        i += 1
+
+# 4.2 Mustererzeugung
+
+i = 0
+p = [1]
+max = 5
+
+for i in range(max * 2 - 1):
+    for q in p:
+        print("*", end = "")
+    print()
+    if i < max:
+        p.append(1)
+    else:
+        p.remove(1)
+
+# 4.3 Menü
+
+def Menue():
+
+    print("Bitte wählen Sie eine Option:\n",
+    "1 Funktion 1\n",
+    "2 Funktion 2\n",
+    "3 Funktion 3\n",
+    "4 Programm beenden")
+
+    x = int(input())
+
+    if x == 4:
+        print("--- Programm beendet ---")
+    else:
+        print(x)
+        Menue()
+
+Menue()
+
+# 4.4 Zeichenkette
+
+def Zeichenkette():
+
+    kette = input("Bitte geben Sie eine Zeichenkette ein: ")
+
+    
+
+Zeichenkette()
+
+# 4.5 Menü mit Funktionsaufruf
