@@ -221,23 +221,27 @@ Steuerung(input('alpha: '), input('x: '), input('a: '), input('b: '), input('w: 
 
 # (a)
 
-wurf = 0
-spieler1 = 0
-spieler2 = 0
+def Wuerfelspiel():
 
-for i in range(10):
-    wurf = random.randint(1,6)
-    if i % 2 == 0:
-        spieler1 += wurf
+    wurf = 0
+    spieler1 = 0
+    spieler2 = 0
+
+    for i in range(10):
+        wurf = random.randint(1,6)
+        if i % 2 == 0:
+            spieler1 += wurf
+        else:
+            spieler2 += wurf
+
+    if spieler1 > spieler2:
+        print("Spieler 1 gewinnt!")
+    elif spieler2 > spieler1:
+        print("Spieler 2 gewinnt!")
     else:
-        spieler2 += wurf
+        print("Unentschieden!")
 
-if spieler1 > spieler2:
-    print("Spieler 1 gewinnt!")
-elif spieler2 > spieler1:
-    print("Spieler 2 gewinnt!")
-else:
-    print("Unentschieden!")
+Wuerfelspiel()
 
 # (b)
 
@@ -305,18 +309,22 @@ while wurf != 6:
 
 # 4.2 Mustererzeugung
 
-i = 0
-p = [1]
-max = 5
+def Muster():
 
-for i in range(max * 2 - 1):
-    for q in p:
-        print("*", end = "")
-    print()
-    if i < max:
-        p.append(1)
-    else:
-        p.remove(1)
+    i = 0
+    p = [1]
+    max = 5
+
+    for i in range(max * 2 - 1):
+        for q in p:
+            print("*", end = "")
+        print()
+        if i < max:
+            p.append(1)
+        else:
+            p.remove(1)
+
+Muster()
 
 # 4.3 Menü
 
@@ -342,10 +350,53 @@ Menue()
 
 def Zeichenkette():
 
-    kette = input("Bitte geben Sie eine Zeichenkette ein: ")
+    alphabet = [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]
 
+    kette = input("Bitte geben Sie eine Zeichenkette ein: ")
+    gesuchteKette = input("Bitte geben Sie die gesuchte Zeichenkette ein: ")
+
+    anzahlZeichen = 0
+    anzahlBuchstaben = 0
+    anzahlGesuchteZeichen = 0
+
+    for char in kette:
+        anzahlZeichen += 1
+
+    for char in kette:
+        if char in alphabet:
+            anzahlBuchstaben += 1
     
+    for char in kette:
+        if gesuchteKette in kette:
+            anzahlGesuchteZeichen += 1
+
+    print(Zeichenkette)
+    print(gesuchteKette)
+    print(anzahlZeichen)
 
 Zeichenkette()
 
 # 4.5 Menü mit Funktionsaufruf
+
+def Menue():
+
+    print("Bitte wählen Sie eine Option:\n",
+    "1 Funktion 1\n",
+    "2 Funktion 2\n",
+    "3 Funktion 3\n",
+    "4 Programm beenden")
+
+    x = int(input())
+
+    if x == 1:
+        Wuerfelspiel()
+    elif x == 2:
+        Muster()
+    elif x == 3:
+        Zeichenkette()
+    elif x == 4:
+        print("--- Programm beendet ---")
+    else:
+        print("ungültige Eingabe")
+
+Menue()
