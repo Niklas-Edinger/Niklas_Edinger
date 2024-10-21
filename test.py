@@ -149,9 +149,9 @@ muenzwurf()
 
 def QuadGleichung():
 
-    float a = input('a: ')
-    float b = input('b: ')
-    float c = input('c: ')
+    a = input('a: ')
+    b = input('b: ')
+    c = input('c: ')
 
     x = (-b + (b**2 - 4*a*c)**0.5) / (2*a)
 
@@ -176,20 +176,20 @@ def Schrauben(durchmesser, laenge):
     else:
         print('Unbekannter Schraubentyp')
 
-Schraube(input('Durchmesser in mm: '), input('Länge in mm: '),)
+Schrauben(input('Durchmesser in mm: '), input('Länge in mm: '),)
 
 # 3.4 Schaltjahr
 
 jahreszahl = 0
-schaltjahr = false
+schaltjahr = False
 
-def Kalender(int(jahreszahl)):
+def Kalender(jahreszahl):
 
     if jahreszahl % 4 == 0 and jahreszahl % 100 != 0 or jahreszahl % 400 == 0:
-        schaltjahr = true
+        schaltjahr = True
 
-    if schaltjahr == true
-        print:('Februar hat 28 Tage.')
+    if schaltjahr == True:
+        print('Februar hat 28 Tage.')
     else:
         print('Februar hat 29 Tage.')
 
@@ -197,7 +197,7 @@ Kalender(input('Ganzzahlige Jahreszahl: '))
 
 # 3.5 Maschinensteuerung
 
-def Steuerung(int(alpha), x, a, b, w):
+def Steuerung(alpha, x, a, b, w):
 
     y = 0
     anteil = 0
@@ -221,6 +221,8 @@ Steuerung(input('alpha: '), input('x: '), input('a: '), input('b: '), input('w: 
 
 # (a)
 
+import random
+
 def Wuerfelspiel():
 
     wurf = 0
@@ -241,7 +243,8 @@ def Wuerfelspiel():
     else:
         print("Unentschieden!")
 
-Wuerfelspiel()
+for i in range (100):
+    Wuerfelspiel()
 
 # (b)
 
@@ -319,7 +322,7 @@ def Muster():
         for q in p:
             print("*", end = "")
         print()
-        if i < max:
+        if i < max - 1:
             p.append(1)
         else:
             p.remove(1)
@@ -350,7 +353,7 @@ Menue()
 
 def Zeichenkette():
 
-    alphabet = [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]
+    alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 
     kette = input("Bitte geben Sie eine Zeichenkette ein: ")
     gesuchteKette = input("Bitte geben Sie die gesuchte Zeichenkette ein: ")
@@ -366,13 +369,15 @@ def Zeichenkette():
         if char in alphabet:
             anzahlBuchstaben += 1
     
-    for char in kette:
-        if gesuchteKette in kette:
+    for i in range(len(kette)):
+        if kette[i] == gesuchteKette:
             anzahlGesuchteZeichen += 1
 
-    print(Zeichenkette)
-    print(gesuchteKette)
-    print(anzahlZeichen)
+    print(f'Ursprüngliche Zeichenkette: {kette}')
+    print(f'Gesuchte Zeichenkette: {gesuchteKette}')
+    print(f'Anzahl Zeichen in ursprüngliche Zeichenkette: {anzahlZeichen}')
+    print(f'Anzahl Buchstaben in ursprüngliche Zeichenkette: {anzahlBuchstaben}')
+    print(f'Anzahl gesuchte Zeichen in ursprüngliche Zeichenkette: {anzahlGesuchteZeichen}')
 
 Zeichenkette()
 
@@ -381,9 +386,9 @@ Zeichenkette()
 def Menue():
 
     print("Bitte wählen Sie eine Option:\n",
-    "1 Funktion 1\n",
-    "2 Funktion 2\n",
-    "3 Funktion 3\n",
+    "1 Wuerfelspiel 1\n",
+    "2 Muster 2\n",
+    "3 Zeichenkette 3\n",
     "4 Programm beenden")
 
     x = int(input())
